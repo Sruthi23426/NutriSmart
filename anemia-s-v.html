@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anemia - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Anemia</h2>
+<p>
+South Indian vegetarian diets can be rich in iron by including millets, green leafy vegetables,
+and legumes along with vitamin C-rich foods to improve iron absorption and boost hemoglobin levels.
+</p>
+
+<img src="images/anemia.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Ragi, millets, and whole grains</li>
+<li>Spinach, drumstick leaves, other greens</li>
+<li>Lentils, dal, chickpeas</li>
+<li>Beetroot and jaggery</li>
+<li>Dates, raisins</li>
+<li>Fruits rich in Vitamin C (orange, lemon)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Tea/coffee immediately after meals</li>
+<li>Highly processed foods</li>
+<li>Excess refined sugar</li>
+<li>Low-iron junk foods</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Ragi dosa / idli + sambar / vegetable upma</li>
+<li><b>Mid-Morning:</b> Coconut water / fruits / beetroot juice</li>
+<li><b>Lunch:</b> Rice + sambar + greens / millet + curry + vegetables</li>
+<li><b>Evening:</b> Sundal / roasted peanuts / sprouts</li>
+<li><b>Dinner:</b> Vegetable upma / dosa + chutney / soup</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Walking</li>
+<li>Yoga</li>
+<li>Light breathing exercises</li>
+</ul>
+
+
+<img src="images/generalexec.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" 
+style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Anemia Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may slow recovery. Include light movement and iron-rich foods daily." :
+"Maintain moderate activity to improve blood circulation and energy levels.";
+</script>
+
+</body>
+</html>

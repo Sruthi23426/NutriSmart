@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personalised Health Profile</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,#d9fbe7,#e6f0ff);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+header{
+  width:100%;
+  background:#0f766e;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+.container{
+  max-width:850px;
+  width:90%;
+  background:white;
+  margin:40px auto;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.hidden{display:none}
+
+label{
+  display:block;
+  margin-top:15px;
+  font-weight:600;
+}
+
+input,select{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  margin-top:25px;
+  background:#0f766e;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Personalised Health Profile</h1>
+</header>
+
+<!-- Profile Questions -->
+<div class="container" id="profileForm">
+
+<h2>Tell us more about you</h2>
+
+<label>Region</label>
+<select id="region">
+  <option value="North">North India</option>
+  <option value="South">South India</option>
+</select>
+
+<label>Select Any Health Condition (if applicable)</label>
+<select id="illness">
+<option value="None">None</option>
+<option value="Diabetes">Diabetes</option>
+<option value="Hypertension">Hypertension (High Blood Pressure)</option>
+<option value="PCOS">PCOS</option>
+<option value="PCOD">PCOD</option>
+<option value="Pregnancy">Pregnancy</option>
+<option value="Thyroid">Thyroid Disorder</option>
+<option value="Heart Disease">Heart Disease</option>
+<option value="Obesity">Obesity</option>
+<option value="Asthma">Asthma</option>
+<option value="Anemia">Anemia</option>
+<option value="Arthritis">Arthritis</option>
+</select>
+
+<label>Diet Preference</label>
+<select id="diet">
+<option>Vegetarian</option>
+<option>Non-Vegetarian</option>
+</select>
+
+<label>Activity Level</label>
+<select id="activity">
+<option>Low</option>
+<option>Moderate</option>
+<option>High</option>
+</select>
+
+<button onclick="updateProfile()">Update Profile</button>
+
+<p id="msg"></p>
+
+</div>
+
+<!-- Plan Buttons -->
+<div class="container hidden" id="planSection">
+
+<h2>Your Personalised Plans</h2>
+
+<button onclick="dietPlan()">Generate Diet Plan</button>
+<button onclick="workoutPlan()">Generate Workout Plan</button>
+
+</div>
+
+<script>
+
+async function updateProfile(){
+
+  let email = localStorage.getItem("email") 
+  if(!email){
+    alert("User email missing. Please register again.");
+    return;
+  }
+
+  let region = document.getElementById("region").value;
+  let illness = document.getElementById("illness").value;
+  let diet = document.getElementById("diet").value;
+  let activity = document.getElementById("activity").value;
+
+  console.log("Sending:", {email, region, illness, diet, activity});
+
+  const response = await fetch("http://localhost:3000/updateProfile",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+      email,region,illness,diet,activity
+    })
+  })
+
+  const data = await response.json();
+
+  console.log("Response:", data);
+
+  if(data.success){
+
+    localStorage.setItem("region", region);
+    localStorage.setItem("diet", diet);
+    localStorage.setItem("illness", illness);
+    localStorage.setItem("activity", activity);
+
+    redirectUser();
+
+  } else{
+    alert(data.message);
+  }
+
+  console.log("Email found:", email);
+}
+
+// ✅ OUTSIDE function
+function redirectUser(){
+
+  let illness = localStorage.getItem("illness");
+  let diet = localStorage.getItem("diet");
+  let region = localStorage.getItem("region");
+
+  let page = "";
+
+  // Normalize region
+  if(region === "North") region = "North India";
+  if(region === "South") region = "South India";
+
+  // Helper function
+  function getPage(prefix){
+    if(region === "North India" && diet === "Vegetarian"){
+      return prefix + "-n-v.html";
+    }
+    else if(region === "North India" && diet === "Non-Vegetarian"){
+      return prefix + "-n-nv.html";
+    }
+    else if(region === "South India" && diet === "Vegetarian"){
+      return prefix + "-s-v.html";
+    }
+    else{
+      return prefix + "-s-nv.html";
+    }
+  }
+
+  // Disease routing
+  if(illness === "Diabetes"){
+    page = getPage("diabetes");
+  }
+  else if(illness === "Hypertension"){
+    page = getPage("bp");
+  }
+  else if(illness === "Obesity"){
+    page = getPage("obesity");
+  }
+  else if(illness === "PCOS"){
+    page = getPage("pcos");
+  }
+  else if(illness === "PCOD"){
+    page = getPage("pcod");
+  }
+  else if(illness === "Pregnancy"){
+    page = getPage("pregnancy");
+  }
+  else if(illness === "Thyroid"){
+    page = getPage("thyroid");
+  }
+  else if(illness === "Heart Disease"){
+    page = getPage("heart");
+  }
+  else if(illness === "Asthma"){
+    page = getPage("asthma");
+  }
+  else if(illness === "Anemia"){
+    page = getPage("anemia");
+  }
+  else if(illness === "Arthritis"){
+    page = getPage("arthritis");
+  }
+  else{
+    page = getPage("general");
+  }
+
+  window.location.href = page;
+}
+
+</script>
+
+</body>
+</html>

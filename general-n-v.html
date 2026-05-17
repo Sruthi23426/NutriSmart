@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>General Health - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Healthy Lifestyle</h2>
+<p>
+A balanced vegetarian diet helps maintain energy, supports immunity, and keeps the body healthy. Focus on whole foods, hydration, and regular meals.
+</p>
+
+<img src="images/general.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Whole grains (roti, brown rice)</li>
+<li>Fresh fruits</li>
+<li>Green vegetables</li>
+<li>Milk and curd</li>
+<li>Nuts and seeds</li>
+<li>Dal and legumes</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Excess sugar</li>
+<li>Junk food</li>
+<li>Deep fried snacks</li>
+<li>Processed food</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Vegetable poha / oats / paratha + curd / fruit smoothie</li>
+<li><b>Mid-Morning:</b> Apple / banana / nuts / buttermilk</li>
+<li><b>Lunch:</b> 2 roti + dal + sabzi + salad / rice + rajma / paneer curry</li>
+<li><b>Snack:</b> Roasted chana / sprouts / herbal tea</li>
+<li><b>Dinner:</b> Light sabzi + roti / khichdi / vegetable soup</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Walking (30 min)</li>
+<li>Yoga</li>
+<li>Stretching</li>
+<li>Light strength training</li>
+</ul>
+
+<img src="images/generalexec.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " General Health Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may affect overall health. Include regular movement daily." :
+"Maintain a balanced lifestyle with proper diet and exercise.";
+</script>
+
+</body>
+</html>

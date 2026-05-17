@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Obesity - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Obesity</h2>
+<p>
+Obesity is caused by excess calorie intake and low energy expenditure. In South Indian diets, high consumption of rice and fried foods can contribute to weight gain. The goal is to create a calorie deficit while maintaining nutrition.
+</p>
+
+<img src="images/obesity.png">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Millets (ragi, jowar, foxtail)</li>
+<li>Vegetable-rich dishes (sambar, poriyal)</li>
+<li>High-fiber foods (oats, sprouts)</li>
+<li>Low-fat curd and buttermilk</li>
+<li>Fruits like papaya, apple, guava</li>
+<li>Green leafy vegetables</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>White rice in large quantities</li>
+<li>Fried snacks (vada, chips, bajji)</li>
+<li>Sugary foods and beverages</li>
+<li>Refined flour (maida-based foods)</li>
+<li>Excess oil and ghee</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Ragi dosa / idli / oats upma / vegetable pongal</li>
+
+<li><b>Mid-Morning:</b> Coconut water / fruit bowl</li>
+
+<li><b>Lunch Options:</b> Brown rice / millet rice + sambar + poriyal + curd</li>
+
+<li><b>Evening Snack:</b> Sundal / buttermilk / sprouts</li>
+
+<li><b>Dinner Options:</b> Vegetable soup / light dosa / upma (small portion)</li>
+
+<li><b>Optional:</b> Herbal drinks / jeera water</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Brisk walking (40–45 min)</li>
+<li>Skipping or light cardio</li>
+<li>Yoga for fat loss</li>
+<li>Daily step goal (8,000–10,000)</li>
+</ul>
+<img src="images/obesityexec.png">
+</div>
+
+<div class="section">
+<h2>Health Tip 💡</h2>
+<div class="highlight">
+Small calorie deficits consistently lead to sustainable weight loss. Avoid crash diets.
+</div>
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Obesity Plan";
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity slows metabolism. Increase daily movement for effective weight loss.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Good activity level supports fat loss. Stay consistent!";
+}
+</script>
+
+</body>
+</html>

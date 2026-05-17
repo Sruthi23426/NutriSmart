@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Obesity - North Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Obesity</h2>
+<p>
+Including lean protein in North Indian diets helps control appetite and reduces overeating. Proper meal balance and reduced oil intake are key to effective weight management.
+</p>
+
+<img src="images/obesity.png">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Grilled chicken (low oil)</li>
+<li>Boiled or omelette eggs</li>
+<li>Fish curry (less oil)</li>
+<li>Whole wheat roti (limited)</li>
+<li>Vegetables and salads</li>
+<li>Low-fat dairy</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Butter chicken, creamy gravies</li>
+<li>Fried chicken</li>
+<li>Red meat (frequent consumption)</li>
+<li>Excess oil and ghee</li>
+<li>Fast food and processed meat</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Boiled eggs / omelette (less oil) / oats + milk / vegetable poha</li>
+
+<li><b>Mid-Morning:</b> Apple / orange / buttermilk</li>
+
+<li><b>Lunch Options:</b> 2 roti + grilled chicken / fish curry (less oil) + sabzi + salad</li>
+
+<li><b>Evening Snack:</b> Roasted chana / sprouts / green tea</li>
+
+<li><b>Dinner Options:</b> Grilled chicken / light soup + sautéed vegetables / egg whites</li>
+
+<li><b>Optional:</b> Lemon water / coconut water (no sugar)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why This Plan Works 📊</h2>
+<ul>
+<li>Protein-rich meals reduce hunger and cravings</li>
+<li>Controls calorie intake without extreme dieting</li>
+<li>Balanced meals prevent overeating</li>
+<li>Encourages sustainable weight loss</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Walking/jogging (40 min)</li>
+<li>Strength training (3 times/week)</li>
+<li>Cycling or sports</li>
+<li>Daily activity goals</li>
+</ul>
+<img src="images/obesityexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Obesity Plan";
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity may slow weight loss. Combine diet with exercise.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Good activity level helps maintain calorie balance!";
+}
+</script>
+
+</body>
+</html>

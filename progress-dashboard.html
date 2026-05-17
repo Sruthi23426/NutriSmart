@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Progress Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+.card{
+background:white;
+padding:25px;
+margin:20px 0;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h2{
+color:#0f766e;
+margin-bottom:15px;
+}
+
+#weeklyList li{
+padding:8px 0;
+border-bottom:1px solid #eee;
+}
+
+.highlight-box{
+background:#e0f7fa;
+padding:15px;
+border-left:5px solid #0f766e;
+border-radius:10px;
+margin-top:15px;
+}
+
+canvas{
+margin-top:20px;
+}
+
+.empty{
+text-align:center;
+padding:20px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p>Your Health Progress Dashboard</p>
+</header>
+
+<div class="container">
+
+<!-- Chart -->
+<div class="card">
+<h2>Progress Chart 📊</h2>
+<canvas id="progressChart"></canvas>
+</div>
+
+<!-- Weekly Scores -->
+<div class="card">
+<h2>Weekly Performance</h2>
+<ul id="weeklyList"></ul>
+</div>
+
+<!-- Average -->
+<div class="card">
+<h2>Overall Adherence</h2>
+<p id="average"></p>
+<div class="highlight-box" id="avgInsight"></div>
+</div>
+
+<!-- Trend -->
+<div class="card">
+<h2>Trend Analysis</h2>
+<p id="trend"></p>
+</div>
+
+<!-- Goal -->
+<div class="card">
+<h2>Goal Progress</h2>
+<p id="goal"></p>
+</div>
+
+</div>
+
+<script>
+
+let email = localStorage.getItem("email");
+
+if(!email){
+alert("User not logged in");
+window.location.href = "login.html";
+}
+
+// FETCH DATA
+fetch("http://localhost:3000/getProgress/" + email)
+.then(res => res.json())
+.then(data => {
+
+let list = document.getElementById("weeklyList");
+
+if(!data || data.length === 0){
+list.innerHTML = "<li class='empty'>No progress data available yet. Please evaluate your progress first.</li>";
+return;
+}
+
+let total = 0;
+let labels = [];
+let scores = [];
+
+// Populate list
+data.forEach(item => {
+  let li = document.createElement("li");
+  li.innerText = "Week " + item.week + " → " + item.score + "%";
+  list.appendChild(li);
+
+  total += item.score;
+  labels.push("Week " + item.week);
+  scores.push(item.score);
+});
+
+// DRAW CHART
+new Chart(document.getElementById("progressChart"), {
+  type: "line",
+  data: {
+    labels: labels,
+    datasets: [{
+      label: "Adherence Score (%)",
+      data: scores,
+      fill: false,
+      tension: 0.3
+    }]
+  }
+});
+
+// AVERAGE
+let avg = Math.round(total / data.length);
+document.getElementById("average").innerText =
+"Your average adherence score is " + avg + "%";
+
+// INSIGHT
+let insight = "";
+
+if(avg >= 80){
+  insight = "Excellent consistency. You are maintaining a very healthy routine.";
+}
+else if(avg >= 50){
+  insight = "Moderate consistency. Keep improving small habits daily.";
+}
+else{
+  insight = "Low consistency. Start with small achievable goals.";
+}
+
+document.getElementById("avgInsight").innerText = insight;
+
+// TREND
+let trendText = "Not enough data";
+
+if(data.length > 1){
+  let last = data[data.length-1].score;
+  let prev = data[data.length-2].score;
+
+  if(last > prev) trendText = "Your performance is improving 📈";
+  else if(last < prev) trendText = "Your performance dropped ⚠️";
+  else trendText = "Your performance is stable";
+}
+
+document.getElementById("trend").innerText = trendText;
+
+// GOAL
+let latest = data[data.length-1].score;
+let remaining = 100 - latest;
+
+document.getElementById("goal").innerText =
+"You are " + remaining + "% away from optimal health.";
+
+})
+.catch(err => {
+console.error(err);
+alert("Error loading progress data");
+});
+
+</script>
+
+</body>
+</html>

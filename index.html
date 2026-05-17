@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NutriSmart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', sans-serif;
+}
+
+body {
+  background-color: #f9fbfb;
+  color: #2c2c2c;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: #21575b;
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-section img {
+  width: 45px;
+  height: 45px;
+}
+
+.logo-section h1 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #e8f6f7;
+  font-weight: 400;
+}
+
+nav a:hover {
+  color: #c8e6e9;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url("images/download4.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: 65px;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 25px;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* ---------- ABOUT ---------- */
+#about {
+  padding: 80px 4%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  background: #f3f7f7;
+  padding: 40px 50px;
+  border-radius: 20px;
+}
+
+.about-block:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.about-block img {
+  width: 30%;
+  border-radius: 15px;
+}
+
+.about-text {
+  width: 70%;
+}
+
+.about-text h3 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #21575b;
+  font-weight: 600;
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* ---------- SOURCES SECTION ---------- */
+.sources {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.sources h2 {
+  font-size: 34px;
+  color: #21575b;
+  margin-bottom: 30px;
+}
+
+/* horizontal scroll */
+.brand-scroll {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.brand-scroll img {
+  height: 80px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: transform 0.3s;
+}
+
+.brand-scroll img:hover {
+  transform: scale(1.1);
+  filter: none;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 15px 35px;
+  margin: 15px;
+  font-size: 19px;
+  border-radius: 25px;
+  text-decoration: none;
+  background: #21575b;
+  color: white;
+}
+
+.cta a.secondary {
+  background: #6b8f8f; /* muted professional tone */
+}
+
+.cta a:hover {
+  opacity: 0.9;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #eef5f5;
+  padding: 40px;
+  text-align: center;
+}
+
+footer h3 {
+  color: #21575b;
+  margin-bottom: 20px;
+}
+
+.social-icons i {
+  font-size: 24px;
+  margin: 10px;
+  color: #21575b;
+}
+
+.social-icons i:hover {
+  color: #6b8f8f;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .about-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-block img,
+  .about-text {
+    width: 100%;
+  }
+}
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-section">
+    <img src="images/logo.png" alt="NutriSmart Logo">
+    <h1>NutriSmart</h1>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="health.html">Get Started</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Smart Nutrition Starts Here</h2>
+    <p>
+      NutriSmart helps you understand your body’s nutritional needs and guides you
+      toward healthier lifestyle choices with clarity, confidence, and simplicity.
+    </p>
+  </div>
+</section>
+
+<section id="about">
+
+  <div class="about-block">
+    <img src="images/download.jpg" alt="Introduction to Nutri Smart">
+    <div class="about-text">
+      <h3>Introduction to Nutri Smart</h3>
+      <p>
+        Nutri Smart is a reliable and thoughtfully designed platform that helps individuals
+        make healthier and more informed food choices in their everyday lives. It focuses
+        on clear, practical nutritional guidance that avoids confusion and unrealistic diet
+        rules. By encouraging balance rather than restriction, Nutri Smart supports a
+        sustainable and positive approach to healthy living.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-block">
+    <img src="images/download2.png" alt="Trusted Sources">
+    <div class="about-text">
+      <h3>Our Trusted Sources and Research Process</h3>
+      <p>
+        Nutri Smart gathers nutritional information from trusted health platforms,
+        certified dietary guidelines, and expert-reviewed medical resources. Each
+        piece of information is carefully evaluated to eliminate misleading claims
+        and unhealthy advice. This ensures that users receive guidance that is both
+        scientifically accurate and safe to follow.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-block">
+    <img src="images/download3.png" alt="Why Nutri Smart">
+    <div class="about-text">
+      <h3>Why Nutri Smart Makes a Difference</h3>
+      <p>
+        Nutri Smart stands apart by combining expert-backed knowledge with a simple,
+        user-friendly presentation. It empowers users to understand nutrition clearly,
+        make informed decisions confidently, and build long-term healthy habits.
+        The platform transforms nutrition from a complex topic into an accessible
+        and supportive daily guide.
+      </p>
+    </div>
+  </div>
+
+  <div class="sources">
+  <h2>Our Nutrition Sources</h2>
+
+  <div class="brand-scroll">
+    <img src="images/brand1.png" alt="WHO">
+    <img src="images/brand2.png" alt="NIH">
+    <img src="images/brand3.png" alt="Harvard Health">
+    <img src="images/brand4.svg" alt="Mayo Clinic">
+    <img src="images/brand5.jpg" alt="Healthline">
+    <img src="images/brand6.jpg" alt="AHA">
+    <img src="images/brand7.png" alt="NHS">
+    <img src="images/brand8.png" alt="FAO">
+    <img src="images/brand9.png" alt="AND">
+  </div>
+</div>
+
+  <div class="cta">
+    <a href="health.html">Get Your Health Score</a>
+    <a href="learn.html" class="secondary">Learn More</a>
+  </div>
+
+</section>
+
+<footer id="contact">
+  <h3>Contact Us</h3>
+  <div class="social-icons">
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin"></i>
+    <i class="fab fa-whatsapp"></i>
+  </div>
+  <p>© 2026 NutriSmart. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

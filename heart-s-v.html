@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Heart Disease - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Heart Disease</h2>
+<p>
+South Indian diets can be heart-friendly when made with millets, less oil, and traditional fermented foods like idli and dosa.
+</p>
+
+<img src="images/heart.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Millets (ragi, jowar)</li>
+<li>Idli and dosa</li>
+<li>Vegetables</li>
+<li>Coconut (limited)</li>
+<li>Legumes</li>
+<li>Curd (low-fat)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Deep fried vada/bajji</li>
+<li>Excess coconut oil</li>
+<li>White rice (excess)</li>
+<li>Processed snacks</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Idli + sambar / ragi dosa / vegetable upma</li>
+<li><b>Mid-Morning:</b> Coconut water / fruit</li>
+<li><b>Lunch:</b> Millet rice + sambar + vegetable poriyal</li>
+<li><b>Snack:</b> Sundal / nuts / herbal tea</li>
+<li><b>Dinner:</b> Vegetable soup / chapati + curry</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Walking</li>
+<li>Yoga</li>
+<li>Light stretching</li>
+<li>Breathing exercises</li>
+</ul>
+
+<img src="images/heartexec.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Heart Care Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity increases heart risk. Include light exercise daily." :
+"Maintain regular activity to support heart health.";
+</script>
+
+
+</body>
+</html>

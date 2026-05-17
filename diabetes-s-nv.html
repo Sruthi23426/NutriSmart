@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diabetes - South Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Diabetes</h2>
+<p>
+Adding lean protein like fish, eggs, and chicken helps reduce blood sugar spikes and improves insulin response when combined with a balanced diet.
+</p>
+
+<img src="images/diabetes.avif">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Grilled fish or fish curry (low oil)</li>
+<li>Boiled eggs</li>
+<li>Skinless chicken</li>
+<li>Millets and brown rice</li>
+<li>Vegetable sambar and salads</li>
+<li>Nuts and seeds</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Fried chicken or fish</li>
+<li>Excess red meat</li>
+<li>Large portions of white rice</li>
+<li>Heavy coconut-based gravies</li>
+<li>Processed meats</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Idli (2) / dosa (less oil) + egg / vegetable omelette / upma</li>
+
+<li><b>Mid-Morning:</b> Coconut water / guava / small fruit portion</li>
+
+<li><b>Lunch Options:</b> Brown rice (small portion) + fish curry / chicken (low oil) + vegetable poriyal</li>
+
+<li><b>Evening Snack:</b> Boiled egg / sundal / buttermilk</li>
+
+<li><b>Dinner Options:</b> Grilled fish / egg whites + vegetables / light soup</li>
+
+<li><b>Optional:</b> Rasam / unsweetened herbal drinks</li>
+</ul>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Walking or jogging</li>
+<li>Yoga and breathing exercises</li>
+<li>Cycling</li>
+</ul>
+<img src="images/diabexerc.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Diabetes Plan";
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity may increase insulin resistance. Add protein and stay active.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Balanced diet + activity helps maintain glucose levels!";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Asthma - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Asthma</h2>
+<p>
+South Indian vegetarian diets focus on light, nutritious, and easy-to-digest foods that help
+reduce inflammation and support better breathing.
+</p>
+
+<img src="images/asthma.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Fruits like apple, orange</li>
+<li>Leafy vegetables</li>
+<li>Turmeric, ginger, garlic</li>
+<li>Whole grains and millets</li>
+<li>Warm fluids (herbal tea, soups)</li>
+<li>Nuts and seeds</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Cold drinks and ice creams</li>
+<li>Processed and packaged foods</li>
+<li>Deep fried foods</li>
+<li>Excess dairy (if triggering symptoms)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Idli / dosa / vegetable upma / ragi porridge</li>
+<li><b>Mid-Morning:</b> Coconut water / fruit / warm water</li>
+<li><b>Lunch:</b> Rice + sambar + vegetables / curd rice / millet + curry</li>
+<li><b>Evening:</b> Sundal / roasted peanuts / herbal tea</li>
+<li><b>Dinner:</b> Vegetable soup / light dosa / upma</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Pranayama (breathing exercises)</li>
+<li>Walking</li>
+<li>Light yoga</li>
+</ul>
+
+<img src="images/asthmaexec.jpg">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" 
+style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Asthma Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may reduce lung capacity. Practice breathing exercises daily." :
+"Maintain regular activity and breathing exercises for better lung health.";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PCOS - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About PCOS</h2>
+<p>
+Polycystic Ovary Syndrome (PCOS) is a hormonal disorder associated with insulin resistance, inflammation, and irregular menstrual cycles. Managing diet is essential to stabilize blood sugar levels and support hormonal balance.
+</p>
+
+<img src="images/pcodpcos.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Fish (omega-3 rich)</li>
+<li>Egg whites</li>
+<li>Millet rice</li>
+<li>Vegetables</li>
+<li>Buttermilk</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Refined carbs (maida, white bread)</li>
+<li>Sugary drinks and sweets</li>
+<li>Fried foods</li>
+<li>Highly processed snacks</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Flagged Foods ⚠️</h2>
+<div class="highlight">
+High-carb meals without protein can spike insulin levels. Always combine carbohydrates with protein or fiber.
+</div>
+</div>
+
+<div class="section">
+
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Idli + egg / omelette</li>
+<li><b>Mid-Morning:</b> Coconut water</li>
+<li><b>Lunch:</b> Millet rice + fish curry + vegetables</li>
+<li><b>Evening:</b> Boiled egg / sundal</li>
+<li><b>Dinner:</b> Grilled fish + vegetables</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why This Plan Works 📊</h2>
+<ul>
+<li>Omega-3 reduces inflammation</li>
+<li>Protein improves insulin function</li>
+<li>Balanced meals regulate hormones</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Strength training (very important)</li>
+<li>Brisk walking</li>
+<li>Yoga (hormone balancing)</li>
+</ul>
+<img src="images/pcodpcosexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " PCOS Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity worsens insulin resistance. Immediate lifestyle changes required." :
+"Good activity supports hormone balance. Stay consistent!";
+</script>
+
+</body>
+</html>

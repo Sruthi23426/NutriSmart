@@ -1,0 +1,63 @@
+*{
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+margin:0;
+background:#f4fffb;
+color:#333;
+}
+
+header{
+background:#0f766e;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.container{
+max-width:1000px;
+margin:30px auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#0f766e;
+margin-top:20px;
+}
+
+.section{
+margin-top:25px;
+}
+
+ul{
+margin-top:10px;
+line-height:1.8;
+}
+
+.highlight{
+background:#e0f7fa;
+padding:15px;
+border-left:5px solid #0f766e;
+margin-top:15px;
+border-radius:8px;
+}
+
+.warning{
+background:#ffe5e5;
+padding:15px;
+border-left:5px solid red;
+margin-top:15px;
+border-radius:8px;
+}
+
+img{
+width:60%;
+display:block;
+margin:15px auto;
+border-radius:10px;
+}

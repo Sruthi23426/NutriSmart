@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Obesity - South Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Obesity</h2>
+<p>
+Including lean protein in South Indian diets helps improve satiety and reduces overeating. Proper portion control and balanced meals are key to weight loss.
+</p>
+
+<img src="images/obesity.png">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Grilled fish, boiled eggs</li>
+<li>Skinless chicken (low oil)</li>
+<li>Millets and brown rice</li>
+<li>Vegetable-based curries</li>
+<li>Salads and soups</li>
+<li>Nuts in moderation</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Fried chicken/fish</li>
+<li>Red meat (frequent consumption)</li>
+<li>High oil curries</li>
+<li>White rice in large portions</li>
+<li>Fast food and processed meat</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Idli / dosa (less oil) + egg / omelette / upma</li>
+
+<li><b>Mid-Morning:</b> Coconut water / banana / papaya</li>
+
+<li><b>Lunch Options:</b> Brown rice / millet rice + fish curry / chicken (low oil) + vegetable poriyal</li>
+
+<li><b>Evening Snack:</b> Sundal / roasted peanuts (limited) / buttermilk</li>
+
+<li><b>Dinner Options:</b> Grilled fish / egg whites + vegetables / light soup</li>
+
+<li><b>Optional:</b> Rasam / herbal drinks</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Brisk walking/jogging (40 min)</li>
+<li>Strength training (3x/week)</li>
+<li>Cycling or sports activity</li>
+<li>Daily movement goal</li>
+</ul>
+<img src="images/obesityexec.png">
+</div>
+
+<div class="section">
+<h2>Health Tip 💡</h2>
+<div class="highlight">
+Protein-rich meals help reduce hunger and support fat loss. Avoid deep frying.
+</div>
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Obesity Plan";
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity reduces calorie burn. Combine diet with exercise.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Good activity level enhances fat loss and metabolism!";
+}
+</script>
+
+</body>
+</html>

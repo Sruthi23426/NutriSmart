@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NutriSmart | Check Your Progress</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    body {
+      background-color: #f9ffff;
+      color: #333;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: #21575b;
+      padding: 15px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-section img {
+      width: 45px;
+      height: 45px;
+    }
+
+    .logo-section h1 {
+      color: #f9ffff;
+      font-size: 26px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #f8f0e6;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- PAGE TITLE ---------- */
+    .page-title {
+      text-align: center;
+      padding: 60px 10% 30px;
+    }
+
+    .page-title h2 {
+      font-size: 42px;
+      color: #21575b;
+      margin-bottom: 15px;
+    }
+
+    .page-title p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* ---------- PROGRESS SECTION ---------- */
+    .progress-section {
+      padding: 50px 10%;
+    }
+
+    .progress-block {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      background: #f8f0e6;
+      padding: 35px;
+      border-radius: 20px;
+      margin-bottom: 60px;
+    }
+
+    .progress-block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .progress-block img {
+      width: 40%;
+      border-radius: 15px;
+    }
+
+    .progress-text {
+      width: 60%;
+    }
+
+    .progress-text h3 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #21575b;
+    }
+
+    .progress-text p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    
+    
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #e8fbff;
+      padding: 50px 10%;
+      text-align: center;
+    }
+
+    footer h3 {
+      margin-bottom: 20px;
+      color: #21575b;
+    }
+
+    .social-icons i {
+      font-size: 24px;
+      margin: 15px;
+      color: #21575b;
+      cursor: pointer;
+    }
+
+    .social-icons i:hover {
+      color: #ff914d;
+    }
+
+    footer p {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .progress-block {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .progress-block img,
+      .progress-text {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-section">
+    <img src="images/logo.png" alt="NutriSmart Logo">
+    <h1>NutriSmart</h1>
+  </div>
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="health.html">Get Started</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="page-title">
+  <h2>Check Your Health Progress</h2>
+  <p>
+    Tracking your progress helps you understand how your body is responding to healthier choices.
+    NutriSmart visually represents your improvements so you stay motivated, consistent, and confident
+    in your wellness journey.
+  </p>
+</section>
+
+<section class="progress-section">
+
+  <div class="progress-block">
+    <img src="images/bmi-chart.jpg" alt="BMI Progress Chart">
+    <div class="progress-text">
+      <h3>BMI Improvement Over Time</h3>
+      <p>
+        This chart shows how your Body Mass Index changes when you consistently follow NutriSmart’s
+        guidance. A gradual and steady improvement indicates healthy weight management rather than
+        extreme or unsafe weight loss. Monitoring BMI over time helps ensure long-term balance and
+        sustainable health.
+      </p>
+    </div>
+  </div>
+
+  <div class="progress-block">
+    <img src="images/weight-chart.jpg" alt="Weight Trend Chart">
+    <div class="progress-text">
+      <h3>Weight Change Trend</h3>
+      <p>
+        Your weight trend reflects how well your diet and activity levels align with your health goals.
+        Small fluctuations are normal, but a consistent positive trend indicates better metabolism
+        and improved body composition. This visual helps users stay patient and trust the process.
+      </p>
+    </div>
+  </div>
+
+  <div class="progress-block">
+    <img src="images/diet-chart.webp" alt="Diet Consistency Chart">
+    <div class="progress-text">
+      <h3>Diet Consistency Analysis</h3>
+      <p>
+        This section highlights how consistently you follow your recommended diet plan. Balanced
+        nutrition over time improves digestion, energy levels, and immunity. Consistency matters more
+        than perfection, and this chart reinforces healthy habits.
+      </p>
+    </div>
+  </div>
+
+  <div class="progress-block">
+    <img src="images/exercise-chart.jpg" alt="Exercise Progress Chart">
+    <div class="progress-text">
+      <h3>Exercise Performance Growth</h3>
+      <p>
+        Regular physical activity strengthens muscles, improves heart health, and boosts mental
+        well-being. This chart reflects improvements in activity frequency and endurance. Even small
+        increases in movement contribute significantly to overall fitness.
+      </p>
+    </div>
+  </div>
+
+  <div class="progress-block">
+    <img src="images/health-score.jpg" alt="Overall Health Score">
+    <div class="progress-text">
+      <h3>Overall Health Score</h3>
+      <p>
+        The overall health score combines diet, exercise, and BMI data into a single meaningful
+        indicator. It helps users understand their wellness status at a glance. A rising score
+        indicates positive lifestyle changes and improved long-term health outcomes.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<footer id="contact">
+  <h3>Contact Us</h3>
+  <div class="social-icons">
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin"></i>
+    <i class="fab fa-whatsapp"></i>
+  </div>
+  <p>© 2026 NutriSmart. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

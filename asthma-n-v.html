@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Asthma - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Asthma</h2>
+<p>
+Asthma is a chronic respiratory condition that causes inflammation and narrowing of airways.
+A diet rich in anti-inflammatory and immune-supporting foods can help reduce symptoms and improve breathing.
+</p>
+
+<img src="images/asthma.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Turmeric milk</li>
+<li>Ginger and garlic</li>
+<li>Fresh fruits (apple, papaya, banana)</li>
+<li>Green vegetables (cooked)</li>
+<li>Whole grains</li>
+<li>Nuts and seeds</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Cold beverages</li>
+<li>Fried and oily foods</li>
+<li>Processed snacks</li>
+<li>Excess dairy (can increase mucus)</li>
+<li>Artificial preservatives</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Oats with fruits / vegetable poha / upma / banana smoothie</li>
+<li><b>Mid-Morning:</b> Warm water / fruit / soaked nuts</li>
+<li><b>Lunch Options:</b> 2 roti + dal + cooked vegetables / khichdi + salad / paneer + roti</li>
+<li><b>Evening:</b> Herbal tea / roasted chana / fruit</li>
+<li><b>Dinner Options:</b> Light soup / vegetable curry + roti / khichdi</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Breathing exercises (pranayama)</li>
+<li>Yoga</li>
+<li>Light walking</li>
+</ul>
+
+<img src="images/asthmaexec.jpg">
+</div>
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Asthma Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may reduce lung capacity. Practice breathing exercises daily." :
+"Maintain regular activity and breathing exercises for better lung health.";
+</script>
+
+</body>
+</html>

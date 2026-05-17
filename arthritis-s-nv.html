@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arthritis - South Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Arthritis</h2>
+<p>
+Fish and seafood in South Indian diets provide omega-3 fatty acids that help reduce inflammation and joint pain.
+</p>
+
+<img src="images/arthritis.png">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Fish curry (omega-3 rich)</li>
+<li>Eggs</li>
+<li>Chicken (grilled)</li>
+<li>Millets</li>
+<li>Vegetables</li>
+<li>Curd</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Fried seafood</li>
+<li>Processed meat</li>
+<li>Excess oil</li>
+<li>Sugary foods</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Egg dosa / idli + boiled eggs / upma</li>
+<li><b>Mid-Morning:</b> Coconut water / fruit juice</li>
+<li><b>Lunch:</b> Fish curry + rice / chicken curry + millet / sambar + egg</li>
+<li><b>Snack:</b> Boiled eggs / nuts / buttermilk</li>
+<li><b>Dinner:</b> Chicken soup / vegetable stew + roti / light fish curry</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Swimming</li>
+<li>Walking</li>
+<li>Low-impact aerobics</li>
+<li>Stretching</li>
+</ul>
+
+<img src="images/arthritisexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Arthritis Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may increase joint stiffness. Include gentle movement daily." :
+"Maintain regular activity to support joint flexibility and reduce stiffness.";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>General Health - North Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Healthy Lifestyle</h2>
+<p>
+A balanced non-vegetarian diet provides high-quality protein and essential nutrients when consumed in moderation and with healthy cooking methods.
+</p>
+
+<img src="images/general.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Chicken (grilled/boiled)</li>
+<li>Fish (rich in omega-3)</li>
+<li>Eggs</li>
+<li>Whole grains</li>
+<li>Vegetables</li>
+<li>Fruits</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Fried meat</li>
+<li>Processed meat</li>
+<li>Excess oil</li>
+<li>Junk food</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Boiled eggs + toast / omelette / oats + fruit / egg sandwich</li>
+<li><b>Mid-Morning:</b> Fruit juice / banana / coconut water</li>
+<li><b>Lunch:</b> Chicken curry + roti / fish curry + rice / egg curry + sabzi</li>
+<li><b>Snack:</b> Nuts / boiled eggs / sprouts</li>
+<li><b>Dinner:</b> Grilled chicken + vegetables / soup / light curry + roti</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Walking</li>
+<li>Jogging</li>
+<li>Strength training</li>
+<li>Sports (badminton, cricket)</li>
+</ul>
+
+<img src="images/generalexec.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " General Health Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may affect overall health. Include regular movement daily." :
+"Maintain a balanced lifestyle with proper diet and exercise.";
+</script>
+
+</body>
+</html>

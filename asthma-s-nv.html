@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Asthma - South Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Asthma</h2>
+<p>
+South Indian non-vegetarian diets include fish and eggs which provide omega-3 fatty acids and protein,
+helping reduce inflammation and improve lung function.
+</p>
+
+<img src="images/asthma.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Fish (rich in omega-3)</li>
+<li>Eggs</li>
+<li>Lean chicken</li>
+<li>Fruits like apple, orange</li>
+<li>Garlic and ginger</li>
+<li>Warm fluids (soups, herbal tea)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Cold foods and beverages</li>
+<li>Processed meats</li>
+<li>Deep fried foods</li>
+<li>Packaged snacks</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Egg dosa / omelette / idli + egg curry</li>
+<li><b>Mid-Morning:</b> Fruit / warm water / coconut water</li>
+<li><b>Lunch:</b> Fish curry + rice / chicken curry + vegetables / egg curry</li>
+<li><b>Evening:</b> Boiled eggs / nuts / herbal tea</li>
+<li><b>Dinner:</b> Grilled fish / chicken + vegetables / light egg curry</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Breathing exercises (pranayama)</li>
+<li>Walking</li>
+<li>Light yoga</li>
+</ul>
+
+<img src="images/asthmaexec.jpg">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" 
+style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Asthma Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may reduce lung capacity. Practice breathing exercises daily." :
+"Maintain regular activity and breathing exercises for better lung health.";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PCOD - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About PCOD</h2>
+<p>
+Polycystic Ovarian Disease (PCOD) is a hormonal condition often linked with insulin resistance and irregular metabolism. A high-fiber, low glycemic index vegetarian diet can help regulate hormones and improve insulin sensitivity.
+</p>
+
+<img src="images/pcodpcos.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Whole grains (roti, oats, quinoa)</li>
+<li>Protein-rich foods (paneer, dal, sprouts)</li>
+<li>Leafy vegetables (spinach, methi)</li>
+<li>Seeds (flaxseeds, chia seeds)</li>
+<li>Low-fat dairy</li>
+<li>Fruits with low GI (apple, berries)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Grilled chicken</li>
+<li>Boiled eggs</li>
+<li>Fish</li>
+<li>Whole grains</li>
+<li>Vegetables</li>
+<li>Seeds and nuts</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Flagged Foods ⚠️</h2>
+<div class="highlight">
+Excess dairy and high-carb meals can worsen insulin resistance. Balance carbs with protein.
+</div>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Eggs + oats / omelette</li>
+<li><b>Mid-Morning:</b> Fruit + nuts</li>
+<li><b>Lunch:</b> Roti + chicken/fish + sabzi</li>
+<li><b>Evening:</b> Sprouts / roasted snacks</li>
+<li><b>Dinner:</b> Grilled protein + vegetables</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why This Plan Works 📊</h2>
+<ul>
+<li>Lean protein improves insulin response</li>
+<li>Reduces cravings and overeating</li>
+<li>Supports muscle and metabolism</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Brisk walking (30–40 min)</li>
+<li>Strength training (important for PCOD)</li>
+<li>Yoga (hormone balancing)</li>
+</ul>
+<img src="images/pcodpcosexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " PCOD Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may worsen hormonal imbalance. Start regular exercise." :
+"Good activity supports hormonal balance. Stay consistent!";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Learn More - NutriSmart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Times New Roman", Times, serif;
+}
+
+body{
+background:#f9ffff;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+background:#21575b;
+padding:15px 50px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo-section{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-section img{
+width:45px;
+height:45px;
+}
+
+.logo-section h1{
+color:#f9ffff;
+font-size:28px;
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+font-size:18px;
+color:#f8f0e6;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* HERO */
+
+.hero{
+height:60vh;
+background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url("nutrition-banner.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+max-width:900px;
+line-height:1.6;
+}
+
+/* CONTENT SECTIONS */
+
+.section{
+max-width:1300px;
+margin:auto;
+padding:80px 5%;
+}
+
+.info-block{
+display:flex;
+align-items:center;
+gap:40px;
+margin-bottom:70px;
+background:#f8f0e6;
+padding:50px;
+border-radius:20px;
+}
+
+.info-block:nth-child(even){
+flex-direction:row-reverse;
+}
+
+.info-block img{
+width:35%;
+border-radius:15px;
+}
+
+.info-text{
+width:65%;
+}
+
+.info-text h3{
+font-size:32px;
+margin-bottom:15px;
+color:#21575b;
+}
+
+.info-text p{
+font-size:19px;
+line-height:1.8;
+}
+
+/* BENEFITS GRID */
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-top:50px;
+}
+
+.benefit-card{
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.benefit-card i{
+font-size:40px;
+color:#21575b;
+margin-bottom:20px;
+}
+
+.benefit-card h4{
+font-size:22px;
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#e8fbff;
+padding:50px 10%;
+text-align:center;
+}
+
+footer h3{
+margin-bottom:20px;
+font-size:26px;
+color:#21575b;
+}
+
+.social-icons i{
+font-size:26px;
+margin:15px;
+color:#21575b;
+cursor:pointer;
+}
+
+.social-icons i:hover{
+color:#ff914d;
+}
+
+footer p{
+margin-top:25px;
+font-size:15px;
+color:#555;
+}
+
+@media(max-width:900px){
+
+.info-block{
+flex-direction:column;
+text-align:center;
+}
+
+.info-block img,
+.info-text{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-section">
+<img src="images/logo.png">
+<h1>NutriSmart</h1>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#knowledge">Nutrition Guide</a>
+<a href="#benefits">Benefits</a>
+<a href="health.html">Get Started</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+<h2>Understanding Nutrition With NutriSmart</h2>
+
+<p>
+NutriSmart is designed to make nutrition easier to understand and apply in everyday life. 
+Instead of complicated diet rules or unrealistic restrictions, the platform focuses on 
+balanced guidance that helps individuals build healthier habits step by step.
+</p>
+
+</div>
+
+</section>
+
+<section class="section" id="knowledge">
+
+<div class="info-block">
+
+<img src="images/balanced-diet.jpg">
+
+<div class="info-text">
+
+<h3>The Importance of Balanced Nutrition</h3>
+
+<p>
+A balanced diet is essential for maintaining energy, supporting body functions, 
+and preventing long-term health problems. NutriSmart emphasizes the importance of 
+including a wide range of nutrients such as proteins, healthy fats, vitamins, 
+minerals, and complex carbohydrates. By promoting balanced eating habits rather 
+than extreme dieting, the platform helps individuals maintain their health in 
+a sustainable and realistic way.
+</p>
+
+</div>
+
+</div>
+
+<div class="info-block">
+
+<img src="images/food-research.jpg">
+
+<div class="info-text">
+
+<h3>How NutriSmart Uses Reliable Research</h3>
+
+<p>
+Nutrition advice on the internet can often be confusing or misleading. NutriSmart 
+addresses this issue by using information gathered from verified dietary guidelines, 
+medical research publications, and trusted health organizations. This ensures that 
+users receive guidance that is accurate, practical, and supported by scientific 
+evidence rather than temporary diet trends.
+</p>
+
+</div>
+
+</div>
+
+<div class="info-block">
+
+<img src="images/healthy-lifestyle.jpg">
+
+<div class="info-text">
+
+<h3>Building Sustainable Healthy Habits</h3>
+
+<p>
+Healthy living is not achieved through short-term changes but through consistent 
+daily habits. NutriSmart encourages users to gradually improve their nutrition 
+choices, understand their body's needs, and maintain a balanced lifestyle. 
+Small improvements in food choices, hydration, and physical activity can lead 
+to significant long-term health benefits.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="benefits">
+
+<h2 style="text-align:center;font-size:38px;color:#21575b;">
+Why Choose NutriSmart
+</h2>
+
+<div class="benefits">
+
+<div class="benefit-card">
+<i class="fa-solid fa-heart-pulse"></i>
+<h4>Health Awareness</h4>
+<p>
+NutriSmart helps users understand their nutritional status and become more 
+aware of the relationship between food and health.
+</p>
+</div>
+
+<div class="benefit-card">
+<i class="fa-solid fa-bowl-food"></i>
+<h4>Better Food Choices</h4>
+<p>
+The platform guides users toward balanced eating patterns that support 
+long-term health rather than temporary diet trends.
+</p>
+</div>
+
+<div class="benefit-card">
+<i class="fa-solid fa-brain"></i>
+<h4>Clear Nutritional Knowledge</h4>
+<p>
+Complex nutritional information is simplified so that users can understand 
+and apply it in their everyday lives.
+</p>
+</div>
+
+<div class="benefit-card">
+<i class="fa-solid fa-leaf"></i>
+<h4>Sustainable Lifestyle</h4>
+<p>
+NutriSmart encourages realistic and sustainable habits that are easier to 
+maintain over long periods of time.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Connect With NutriSmart</h3>
+
+<div class="social-icons">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin"></i>
+<i class="fab fa-whatsapp"></i>
+</div>
+
+<p>© 2026 NutriSmart. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diabetes - North Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Diabetes</h2>
+<p>
+Diabetes affects how your body processes blood sugar. A balanced diet with controlled carbohydrates and sufficient protein helps maintain stable glucose levels. Including lean non-vegetarian sources can improve protein intake without causing sugar spikes.
+</p>
+
+<img src="images/diabetes.avif">
+
+<!-- FOODS TO EAT -->
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Whole wheat roti</li>
+<li>Grilled chicken</li>
+<li>Boiled eggs</li>
+<li>Fish curry (low oil)</li>
+<li>Green vegetables</li>
+<li>Dal and legumes</li>
+</ul>
+</div>
+
+<!-- FOODS TO AVOID -->
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Sugary desserts</li>
+<li>Deep fried chicken</li>
+<li>Processed meats (sausages, salami)</li>
+<li>White rice (excess)</li>
+<li>Soft drinks</li>
+</ul>
+</div>
+
+<!-- FLAGGED -->
+<div class="section">
+<h2>Flagged Foods ⚠️</h2>
+<div class="highlight">
+Egg yolks and red meat should be consumed in moderation. Prefer lean protein like chicken breast and fish.
+</div>
+</div>
+
+<!-- DIET PLAN -->
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Oats / vegetable poha / upma / sprouts salad</li>
+
+<li><b>Mid-Morning:</b> Seasonal fruits (papaya, apple) or buttermilk</li>
+
+<li><b>Lunch Options:</b> 2 roti + dal / chole / rajma + sabzi + salad</li>
+
+<li><b>Evening Snack:</b> Roasted chana / sprouts / herbal tea</li>
+
+<li><b>Dinner Options:</b> Vegetable soup / khichdi / light sabzi + salad</li>
+
+<li><b>Optional:</b> Lemon water / jeera water</li>
+</ul>
+</div>
+
+<!-- EXERCISE -->
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>30–40 min brisk walking</li>
+<li>Light jogging</li>
+<li>Yoga and breathing exercises</li>
+<li>Strength training (2–3 times/week)</li>
+</ul>
+
+<img src="images/diabexerc.webp">
+</div>
+
+<!-- WARNING -->
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="text-align:center; margin-top:30px;">
+
+<h3>Want personalized tips based on your progress?</h3>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+// TITLE
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+
+document.getElementById("title").innerText =
+"Your " + region + " " + diet + " Diabetes Plan";
+
+
+// ACTIVITY WARNING
+let activity = localStorage.getItem("activity");
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity combined with a high-protein non-veg diet may increase metabolic risk. Add daily exercise immediately.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Your activity level supports good metabolic health. Keep maintaining consistency.";
+}
+
+</script>
+
+</body>
+</html>

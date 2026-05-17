@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Obesity - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Obesity</h2>
+<p>
+Obesity occurs due to excess calorie intake and low physical activity. In North Indian diets, frequent consumption of wheat-based foods, ghee, and fried items can contribute to weight gain. The focus is on portion control and balanced nutrition.
+</p>
+
+<img src="images/obesity.png">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Whole wheat roti (limited quantity)</li>
+<li>Dal and legumes (protein source)</li>
+<li>Seasonal vegetables (sabzi, salad)</li>
+<li>Low-fat curd and buttermilk</li>
+<li>Fruits like apple, papaya, orange</li>
+<li>Sprouts and oats</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Parathas with excess ghee/butter</li>
+<li>Deep-fried snacks (pakora, samosa)</li>
+<li>Sweets (jalebi, laddoo)</li>
+<li>Refined flour (maida items)</li>
+<li>Sugary beverages</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Oats / vegetable poha / upma / sprouts salad</li>
+
+<li><b>Mid-Morning:</b> Seasonal fruits (papaya, apple) or buttermilk</li>
+
+<li><b>Lunch Options:</b> 2 roti + dal / chole / rajma + sabzi + salad</li>
+
+<li><b>Evening Snack:</b> Roasted chana / sprouts / herbal tea</li>
+
+<li><b>Dinner Options:</b> Vegetable soup / khichdi / light sabzi + salad</li>
+
+<li><b>Optional:</b> Lemon water / jeera water</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why This Plan Works 📊</h2>
+<ul>
+<li>Controls calorie intake through portion management</li>
+<li>Includes protein to reduce hunger</li>
+<li>Light dinners help reduce fat storage</li>
+<li>High fiber improves digestion and satiety</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Brisk walking (40–45 min)</li>
+<li>Yoga (fat-loss focused)</li>
+<li>Skipping or light cardio</li>
+<li>Daily step goal (8,000+)</li>
+</ul>
+<img src="images/obesityexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Obesity Plan";
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity reduces calorie burn. Increase daily movement.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Good activity level supports weight loss. Stay consistent!";
+}
+</script>
+
+</body>
+</html>

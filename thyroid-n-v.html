@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thyroid - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Thyroid</h2>
+<p>
+Thyroid disorders affect metabolism and energy levels. A vegetarian diet rich in iodine,
+selenium, and zinc helps regulate thyroid function and maintain hormonal balance.
+</p>
+
+<img src="images/thyroid.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Iodized salt</li>
+<li>Milk, paneer, curd</li>
+<li>Nuts (especially walnuts, almonds)</li>
+<li>Whole grains</li>
+<li>Green vegetables (cooked)</li>
+<li>Fruits like banana, apple</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Raw cruciferous vegetables (cabbage, cauliflower)</li>
+<li>Highly processed foods</li>
+<li>Excess soy products</li>
+<li>Refined sugar</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Oats with milk / vegetable poha / paneer paratha / fruit smoothie</li>
+
+<li><b>Mid-Morning:</b> Banana / apple / soaked nuts / fruit bowl</li>
+
+<li><b>Lunch Options:</b> 2 roti + paneer curry + vegetables / dal + rice + curd / rajma + roti</li>
+
+<li><b>Evening Snack:</b> Roasted chana / sprouts / nuts / herbal tea</li>
+
+<li><b>Dinner Options:</b> Vegetable khichdi / roti + sabzi + curd / soup + paneer</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Yoga</li>
+<li>Walking</li>
+<li>Light strength training</li>
+</ul>
+
+<img src="images/thyroidexec.png">
+</div>
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Thyroid Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may affect circulation. Include light movement daily." :
+"Maintain moderate activity for a healthy pregnancy.";
+</script>
+
+
+</body>
+</html>

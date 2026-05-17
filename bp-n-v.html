@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hypertension - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<img src="images/hypertension.webp">
+
+<div class="container">
+
+<h2>About Hypertension</h2>
+<p>
+Hypertension (high blood pressure) is often linked to excess salt intake, stress, and low physical activity. In North Indian diets, pickles, papads, and salty snacks can contribute to increased sodium levels. Managing portion size and reducing salt is key.
+</p>
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Whole wheat roti (low salt)</li>
+<li>Green leafy vegetables (spinach, methi)</li>
+<li>Low-fat dairy (curd, buttermilk)</li>
+<li>Fruits rich in potassium (banana, orange)</li>
+<li>Unsalted nuts (almonds, walnuts)</li>
+<li>Oats and dal</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Pickles and papad</li>
+<li>Packaged and processed foods</li>
+<li>Excess salt in cooking</li>
+<li>Fried snacks</li>
+<li>Instant noodles and soups</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Daily Diet Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Vegetable poha / oats / dal chilla / upma</li>
+<li><b>Mid-morning:</b> Fruit (banana/orange) or coconut water</li>
+<li><b>Lunch:</b> 2 roti + dal + sabzi + salad</li>
+<li><b>Evening Snack:</b> Roasted chana / sprouts / buttermilk</li>
+<li><b>Dinner:</b> Light roti + sabzi OR vegetable soup</li>
+<li><b>Optional:</b> Fresh lime water (low salt)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why This Plan Works 📊</h2>
+<ul>
+<li>Low sodium helps control blood pressure</li>
+<li>High potassium foods balance sodium levels</li>
+<li>Fiber improves heart health</li>
+<li>Light dinner reduces nighttime strain on heart</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Brisk walking (30 min daily)</li>
+<li>Yoga (pranayama, breathing exercises)</li>
+<li>Light stretching</li>
+</ul>
+
+<img src="images/hypertensionexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">Check Your Progress</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Hypertension Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity can worsen blood pressure. Increase daily movement." :
+"Good activity supports healthy blood pressure. Maintain consistency!";
+</script>
+
+</body>
+</html>

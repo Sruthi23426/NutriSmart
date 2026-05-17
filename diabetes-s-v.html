@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diabetes - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Diabetes</h2>
+<p>
+South Indian diets are often rice-heavy, which may raise blood sugar quickly. Switching to millets, increasing fiber intake, and balancing meals with protein helps maintain stable glucose levels.
+</p>
+
+<img src="images/diabetes.avif">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Millets (ragi, foxtail, little millet)</li>
+<li>Brown rice (controlled portions)</li>
+<li>Sambar (lentils + vegetables)</li>
+<li>Vegetable poriyal (low oil)</li>
+<li>Buttermilk and curd</li>
+<li>Leafy greens (keerai)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Large portions of white rice</li>
+<li>Fried snacks like vada, bajji</li>
+<li>Sugary sweets (payasam, kesari)</li>
+<li>Refined flour items</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Ragi dosa / idli (2) / oats upma / vegetable pongal (light)</li>
+
+<li><b>Mid-Morning:</b> Guava / coconut water / small fruit bowl</li>
+
+<li><b>Lunch Options:</b> Brown rice (small portion) + sambar + poriyal + salad</li>
+
+<li><b>Evening Snack:</b> Sundal / sprouts / buttermilk</li>
+
+<li><b>Dinner Options:</b> Vegetable soup / light dosa / sautéed vegetables</li>
+
+<li><b>Optional:</b> Jeera water / herbal drinks</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Brisk walking (30 min)</li>
+<li>Yoga</li>
+<li>Light strength training</li>
+</ul>
+<img src="images/diabexerc.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Diabetes Plan";
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity + high rice intake can spike blood sugar. Control portions and increase fiber.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Good activity level helps maintain stable blood sugar!";
+}
+</script>
+
+</body>
+</html>

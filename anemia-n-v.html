@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anemia - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Anemia</h2>
+<p>
+Anemia is a condition caused by low hemoglobin levels, leading to fatigue and weakness.
+A vegetarian diet rich in iron, vitamin C, and folate helps improve red blood cell production.
+</p>
+
+<img src="images/anemia.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Spinach, methi, kale</li>
+<li>Beetroot, carrots</li>
+<li>Dates, raisins, jaggery</li>
+<li>Legumes (rajma, chole)</li>
+<li>Fortified cereals</li>
+<li>Milk and paneer</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Tea/coffee with meals</li>
+<li>Processed junk food</li>
+<li>Excess dairy with iron-rich meals</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> 
+Oats with dates / vegetable upma / besan chilla / paratha + spinach
+</li>
+
+<li><b>Mid-Morning Options:</b> 
+Pomegranate / orange juice / soaked raisins / beetroot juice
+</li>
+
+<li><b>Lunch Options:</b> 
+2 roti + palak paneer / rajma + rice + salad / chole + roti + beetroot
+</li>
+
+<li><b>Evening Snack Options:</b> 
+Sprouts salad / roasted chana / fruit bowl / nuts
+</li>
+
+<li><b>Dinner Options:</b> 
+Vegetable khichdi / paneer curry + roti / soup + salad / dal + roti
+</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Light walking</li>
+<li>Yoga (improves blood flow)</li>
+<li>Breathing exercises</li>
+</ul>
+
+
+<img src="images/generalexec.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Anemia Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may slow recovery. Include light movement and iron-rich foods daily." :
+"Maintain moderate activity to improve blood circulation and energy levels.";
+</script>
+
+</body>
+</html>

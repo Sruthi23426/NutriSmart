@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>General Health - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Healthy Lifestyle</h2>
+<p>
+South Indian vegetarian meals are rich in fiber and probiotics. Including millets and fermented foods supports digestion and overall health.
+</p>
+
+<img src="images/general.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Idli, dosa, upma</li>
+<li>Millets (ragi, jowar)</li>
+<li>Vegetables</li>
+<li>Fruits</li>
+<li>Curd and buttermilk</li>
+<li>Legumes</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Deep fried snacks</li>
+<li>Excess oil</li>
+<li>Junk food</li>
+<li>Refined sugar</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Idli + sambar / dosa + chutney / upma / pongal</li>
+<li><b>Mid-Morning:</b> Coconut water / fruit</li>
+<li><b>Lunch:</b> Rice + sambar + poriyal + curd / millet meals</li>
+<li><b>Snack:</b> Sundal / nuts / herbal tea</li>
+<li><b>Dinner:</b> Dosa / chapati + curry / vegetable soup</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Yoga</li>
+<li>Walking</li>
+<li>Breathing exercises</li>
+<li>Stretching</li>
+</ul>
+
+<img src="images/generalexec.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " General Health Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may affect overall health. Include regular movement daily." :
+"Maintain a balanced lifestyle with proper diet and exercise.";
+</script>
+
+
+</body>
+</html>

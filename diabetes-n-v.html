@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diabetes - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Diabetes</h2>
+<p>
+A vegetarian diet rich in fiber and low in refined carbs helps control blood sugar. Whole grains and plant protein are key for stability.
+</p>
+
+<img src="images/diabetes.avif">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Whole wheat roti</li>
+<li>Brown rice</li>
+<li>Paneer (low fat)</li>
+<li>Dal and legumes</li>
+<li>Leafy vegetables</li>
+<li>Sprouts</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Sweets and sugary foods</li>
+<li>Fried snacks</li>
+<li>Refined flour items</li>
+<li>Packaged juices</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> Oats / vegetable poha (less oil) / sprouts salad / dal chilla</li>
+
+<li><b>Mid-Morning:</b> Guava / apple / handful of nuts</li>
+
+<li><b>Lunch Options:</b> 1–2 roti + dal / chole / rajma + sabzi + salad</li>
+
+<li><b>Evening Snack:</b> Roasted chana / sprouts / herbal tea</li>
+
+<li><b>Dinner Options:</b> Vegetable soup / light sabzi + salad / small portion khichdi</li>
+
+<li><b>Optional:</b> Buttermilk / jeera water</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Walking (30 min)</li>
+<li>Yoga</li>
+<li>Light cardio</li>
+</ul>
+<img src="images/diabexerc.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Diabetes Plan";
+
+if(activity === "Low"){
+document.getElementById("warningBox").innerText =
+"Low activity can reduce insulin sensitivity. Increase daily movement.";
+}
+else{
+document.getElementById("warningBox").innerText =
+"Good activity level. Keep it consistent!";
+}
+</script>
+
+</body>
+</html>

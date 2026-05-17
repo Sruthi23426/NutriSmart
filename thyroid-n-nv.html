@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thyroid - North Indian Non-Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Thyroid</h2>
+<p>
+Non-vegetarian foods provide essential nutrients like iodine, selenium, and protein 
+that support thyroid hormone production and metabolism regulation.
+</p>
+
+<img src="images/thyroid.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Eggs (rich in iodine and selenium)</li>
+<li>Fish (especially tuna, salmon)</li>
+<li>Chicken (lean protein)</li>
+<li>Dairy products (milk, curd, paneer)</li>
+<li>Whole grains</li>
+<li>Cooked green vegetables</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Excess fried chicken or oily meat</li>
+<li>Processed meat</li>
+<li>Excess soy products</li>
+<li>Refined sugar and junk food</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Boiled eggs / omelette + toast / oats + milk</li>
+<li><b>Mid-Morning:</b> Fruits / nuts</li>
+<li><b>Lunch:</b> Chicken curry + roti / fish curry + rice / egg curry + vegetables</li>
+<li><b>Evening:</b> Boiled eggs / nuts / fruit chaat</li>
+<li><b>Dinner:</b> Grilled chicken / fish + vegetables / egg bhurji + roti</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Walking</li>
+<li>Yoga</li>
+<li>Light strength training</li>
+</ul>
+
+<img src="images/thyroidexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" 
+style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Thyroid Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may slow metabolism. Include light daily movement." :
+"Maintain moderate activity to support thyroid balance.";
+</script>
+
+</body>
+</html>

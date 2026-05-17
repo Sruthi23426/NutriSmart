@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arthritis - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Arthritis</h2>
+<p>
+Arthritis causes joint pain and inflammation. A diet rich in anti-inflammatory foods like whole grains, fruits, and healthy fats helps reduce stiffness and pain.
+</p>
+
+<img src="images/arthritis.png">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Turmeric milk</li>
+<li>Whole grains (brown rice, oats)</li>
+<li>Green leafy vegetables</li>
+<li>Nuts (almonds, walnuts)</li>
+<li>Ginger and garlic</li>
+<li>Fruits like berries and papaya</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Processed foods</li>
+<li>Deep fried snacks</li>
+<li>Refined sugar</li>
+<li>Excess salt</li>
+<li>Packaged snacks</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Vegetable upma / oats / moong dal chilla / poha</li>
+<li><b>Mid-Morning:</b> Fruit smoothie / coconut water / fruit salad</li>
+<li><b>Lunch:</b> Brown rice + dal + sabzi / roti + paneer curry + salad</li>
+<li><b>Snack:</b> Roasted peanuts / sprouts / herbal tea</li>
+<li><b>Dinner:</b> Khichdi / vegetable soup / chapati + sabzi</li>
+<li><b>Optional:</b> Warm turmeric water</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Gentle yoga</li>
+<li>Stretching exercises</li>
+<li>Swimming</li>
+<li>Walking (20–30 min)</li>
+</ul>
+
+<img src="images/arthritisexec.png">
+</div>
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Arthritis Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may increase joint stiffness. Include gentle movement daily." :
+"Maintain regular activity to support joint flexibility and reduce stiffness.";
+</script>
+
+</body>
+</html>

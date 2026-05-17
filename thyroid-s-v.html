@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thyroid - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Thyroid</h2>
+<p>
+A South Indian vegetarian diet can support thyroid health by providing essential nutrients 
+like iodine, selenium, and fiber while maintaining traditional balanced meals.
+</p>
+
+<img src="images/thyroid.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Iodized salt</li>
+<li>Milk, curd, buttermilk</li>
+<li>Whole grains (rice, ragi, millets)</li>
+<li>Cooked vegetables</li>
+<li>Nuts (especially almonds, walnuts)</li>
+<li>Fruits like banana, apple</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Raw cabbage, cauliflower (cruciferous vegetables)</li>
+<li>Highly processed foods</li>
+<li>Excess soy products</li>
+<li>Refined sugar</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Idli + sambar / dosa + chutney / ragi porridge / vegetable upma</li>
+<li><b>Mid-Morning:</b> Fruits / coconut water / soaked nuts</li>
+<li><b>Lunch:</b> Rice + sambar + vegetables + curd / rasam + rice + poriyal</li>
+<li><b>Evening:</b> Roasted chana / nuts / herbal tea</li>
+<li><b>Dinner:</b> Vegetable khichdi / dosa + chutney / light rice + dal</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Exercises 🏃</h2>
+<ul>
+<li>Walking</li>
+<li>Yoga</li>
+<li>Light physical activity</li>
+</ul>
+
+<img src="images/thyroidexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" 
+style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Thyroid Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may slow metabolism. Include light daily movement." :
+"Maintain moderate activity for better thyroid balance.";
+</script>
+
+</body>
+</html>

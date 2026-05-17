@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Heart Disease - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Heart Disease</h2>
+<p>
+Heart disease occurs due to blocked arteries and high cholesterol. A heart-healthy diet focuses on reducing saturated fats and increasing fiber-rich foods to improve heart function.
+</p>
+
+<img src="images/heart.jpg">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Oats and whole grains</li>
+<li>Fresh fruits (apple, berries)</li>
+<li>Green leafy vegetables</li>
+<li>Low-fat dairy</li>
+<li>Nuts and seeds</li>
+<li>Legumes (dal, beans)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Butter and ghee (excess)</li>
+<li>Fried foods</li>
+<li>Refined flour (maida)</li>
+<li>Processed snacks</li>
+<li>High-sugar foods</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Oats / vegetable poha / vegetable dalia / fruit bowl</li>
+<li><b>Mid-Morning:</b> Apple / orange / nuts / green tea</li>
+<li><b>Lunch:</b> Brown rice + dal + sabzi + salad / roti + paneer + vegetables</li>
+<li><b>Snack:</b> Roasted chana / fruits / sprouts salad</li>
+<li><b>Dinner:</b> Vegetable soup / khichdi / roti + light sabzi</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Brisk walking</li>
+<li>Yoga</li>
+<li>Light cycling</li>
+<li>Breathing exercises</li>
+</ul>
+
+<img src="images/heartexec.webp">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Heart Care Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity increases heart risk. Include light exercise daily." :
+"Maintain regular activity to support heart health.";
+</script>
+
+</body>
+</html>

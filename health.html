@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NutriSmart Health</title>
+
+<style>
+*{
+  box-sizing:border-box; 
+  font-family:'Segoe UI',sans-serif
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,#d9fbe7,#e6f0ff);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+header{
+  width:100%;
+  background:#0f766e;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+.container{
+  max-width:850px;
+  width:90%;
+  background:white;
+  margin:40px auto;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.hidden{display:none;}
+
+h2{color:#0f766e;}
+
+label{
+  display:block;
+  margin-top:18px;
+  font-weight:600;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+button{
+  margin-top:20px;
+  width:100%;
+  padding:13px;
+  background:#0f766e;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.switch{
+  text-align:center;
+  margin-top:15px;
+  cursor:pointer;
+  color:#0f766e;
+  font-weight:600;
+}
+
+/* ✅ NEW BMI CARD */
+.bmi-card{
+  margin-top:20px;
+  padding:20px;
+  border-radius:15px;
+  background:#f0fdf9;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.bmi-card h3{
+  color:#0f766e;
+  margin-bottom:15px;
+}
+
+.bmi-card ul{
+  padding-left:20px;
+}
+
+.bmi-card li{
+  margin-bottom:10px;
+  line-height:1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart Health Assessment</h1>
+<p>Start your personalised nutrition journey</p>
+</header>
+
+<!-- AUTH -->
+<div class="container" id="authPage">
+
+<h2 id="authTitle">Create Your Account</h2>
+
+<div id="nameField">
+<label>Name</label>
+<input id="name">
+</div>
+
+<div>
+<label>Email</label>
+<input id="email">
+</div>
+
+<div id="ageField">
+<label>Age</label>
+<input type="number" id="age">
+</div>
+
+<button onclick="handleAuth()" id="authBtn">Register</button>
+
+<p class="switch" onclick="toggleAuth()" id="switchText">
+Already have an account? Login
+</p>
+
+<p id="msg"></p>
+
+</div>
+
+<!-- BMI INPUT -->
+<div class="container hidden" id="bmiPage">
+<h2>Enter Your Body Details</h2>
+
+<label>Height (cm)</label>
+<input type="number" id="height">
+
+<label>Weight (kg)</label>
+<input type="number" id="weight">
+
+<button onclick="calculateBMI()">Calculate BMI</button>
+</div>
+
+<!-- BMI RESULT -->
+<div class="container hidden" id="resultPage">
+<h2>Your BMI Result</h2>
+
+<div class="bmi-card">
+  <h3 id="bmiValue"></h3>
+  <ul id="bmiMessage"></ul>
+</div>
+
+<button onclick="goDashboard()">Continue</button>
+</div>
+
+<script>
+
+let isLogin = false;
+
+function toggleAuth(){
+
+  isLogin = !isLogin;
+  document.getElementById("msg").innerText = "";
+
+  if(isLogin){
+    document.getElementById("authTitle").innerText = "Login";
+    document.getElementById("authBtn").innerText = "Login";
+    document.getElementById("nameField").style.display = "none";
+    document.getElementById("ageField").style.display = "none";
+    document.getElementById("switchText").innerText = "New user? Register";
+  } 
+  else{
+    document.getElementById("authTitle").innerText = "Create Your Account";
+    document.getElementById("authBtn").innerText = "Register";
+    document.getElementById("nameField").style.display = "block";
+    document.getElementById("ageField").style.display = "block";
+    document.getElementById("switchText").innerText = "Already have an account? Login";
+  }
+}
+
+function hideAll(){
+  document.querySelectorAll(".container").forEach(c=>c.classList.add("hidden"))
+}
+
+async function handleAuth(){
+
+  let email = document.getElementById("email").value;
+
+  if(!email){
+    alert("Enter email");
+    return;
+  }
+
+  localStorage.setItem("email", email);
+
+  if(isLogin){
+
+    try{
+      let res = await fetch("http://localhost:3000/login",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({email})
+      });
+
+      let data = await res.json();
+
+      if(data.success){
+        hideAll();
+        document.getElementById("bmiPage").classList.remove("hidden");
+      }
+      else{
+        document.getElementById("msg").innerText = "Invalid user. Please register.";
+      }
+
+    }catch(err){
+      alert("Server error");
+    }
+
+  } 
+  else{
+
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+
+    if(!name || !age){
+      alert("Fill all fields");
+      return;
+    }
+
+    try{
+      let res = await fetch("http://localhost:3000/register",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({name,email,age})
+      });
+
+      let data = await res.json();
+
+      if(data.success){
+        document.getElementById("msg").innerText = "Registered successfully!";
+        setTimeout(()=>{
+          hideAll();
+          document.getElementById("bmiPage").classList.remove("hidden");
+        },1000);
+      }
+      else{
+        document.getElementById("msg").innerText = "User already exists. Please login.";
+      }
+
+    }catch(err){
+      alert("Server error");
+    }
+  }
+}
+
+// ✅ UPDATED BMI FUNCTION
+function calculateBMI(){
+
+  let height = document.getElementById("height").value / 100;
+  let weight = document.getElementById("weight").value;
+
+  if(!height || !weight){
+    alert("Please enter height and weight");
+    return;
+  }
+
+  let bmi = (weight/(height*height)).toFixed(1);
+
+  let points = [];
+
+  if(bmi < 18.5){
+    points = [
+      "Your BMI indicates that you are underweight.",
+      "Your body may not be getting enough essential nutrients.",
+      "Increase protein intake (milk, eggs, nuts, legumes).",
+      "Eat frequent meals and healthy snacks.",
+      "Include healthy fats like nuts and seeds.",
+      "Strength training helps gain muscle mass.",
+      "Consult a nutritionist if needed."
+    ];
+  }
+  else if(bmi < 25){
+    points = [
+      "Great! Your BMI is in the healthy range.",
+      "Your weight is balanced for your height.",
+      "Maintain a nutritious balanced diet.",
+      "Continue regular physical activity.",
+      "Stay hydrated and sleep well.",
+      "Avoid junk and processed foods.",
+      "Consistency is key for long-term health."
+    ];
+  }
+  else{
+    points = [
+      "Your BMI indicates you may be overweight.",
+      "This may increase health risks over time.",
+      "Reduce sugar and processed foods.",
+      "Increase physical activity daily.",
+      "Eat more fruits, vegetables, and fiber.",
+      "Avoid late-night eating habits.",
+      "Make small consistent lifestyle changes."
+    ];
+  }
+
+  hideAll();
+  document.getElementById("resultPage").classList.remove("hidden");
+
+  document.getElementById("bmiValue").innerText = "Your BMI Score: " + bmi;
+
+  let listHTML = "";
+  points.forEach(p => {
+    listHTML += `<li>${p}</li>`;
+  });
+
+  document.getElementById("bmiMessage").innerHTML = listHTML;
+}
+
+function goDashboard(){
+  window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pregnancy - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Pregnancy Nutrition</h2>
+<p>
+During pregnancy, the body requires additional nutrients such as iron, calcium, folic acid, and protein to support fetal growth and maternal health. A balanced vegetarian diet can meet these needs when planned carefully.
+</p>
+
+<img src="images/pregnancy.avif">
+
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Whole wheat roti and oats</li>
+<li>Paneer, milk, curd (calcium)</li>
+<li>Green leafy vegetables (iron)</li>
+<li>Dal, chickpeas, sprouts (protein)</li>
+<li>Fruits like banana, apple, pomegranate</li>
+<li>Nuts and seeds</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Unpasteurized dairy products</li>
+<li>Excess caffeine</li>
+<li>Highly processed foods</li>
+<li>Street food (risk of infection)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Flagged Foods ⚠️</h2>
+<div class="highlight">
+Avoid skipping meals. Long gaps can lead to low energy levels and affect fetal nourishment.
+</div>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Oats + milk / vegetable poha / paratha (less oil)</li>
+<li><b>Mid-Morning:</b> Fruit + nuts</li>
+<li><b>Lunch:</b> 2 roti + dal + sabzi + curd</li>
+<li><b>Evening:</b> Sprouts / buttermilk</li>
+<li><b>Dinner:</b> Light roti + sabzi + paneer</li>
+<li><b>Optional:</b> Coconut water / fresh juice</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why This Plan Works 📊</h2>
+<ul>
+<li>Supports fetal growth</li>
+<li>Provides essential micronutrients</li>
+<li>Maintains maternal energy levels</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Activities 🧘</h2>
+<ul>
+<li>Light walking</li>
+<li>Prenatal yoga (doctor approved)</li>
+<li>Breathing exercises</li>
+</ul>
+<img src="images/pregnancyexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Pregnancy Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may affect circulation. Include light movement daily." :
+"Maintain moderate activity for a healthy pregnancy.";
+</script>
+
+</body>
+</html>

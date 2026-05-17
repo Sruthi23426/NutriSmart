@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pregnancy - North Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Pregnancy Nutrition</h2>
+<p>
+During pregnancy, the body requires additional nutrients such as iron, calcium, folic acid, and protein to support fetal growth and maternal health. A balanced vegetarian diet can meet these needs when planned carefully.
+</p>
+
+<img src="images/pregnancy.avif">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Fish (rich in omega-3)</li>
+<li>Eggs</li>
+<li>Rice + sambar</li>
+<li>Vegetables</li>
+<li>Buttermilk</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Unpasteurized dairy products</li>
+<li>Excess caffeine</li>
+<li>Highly processed foods</li>
+<li>Street food (risk of infection)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Flagged Foods ⚠️</h2>
+<div class="highlight">
+Avoid skipping meals. Long gaps can lead to low energy levels and affect fetal nourishment.
+</div>
+</div>
+
+<div class="section">
+<h2>Diet Plan Structure 🍽️</h2>
+<ul>
+<li><b>Breakfast Options:</b> 
+Idli + egg / dosa + omelette / oats + boiled eggs
+</li>
+<li><b>Mid-Morning:</b> Fruit + nuts</li>
+
+<li><b>Lunch Options:</b> 
+Rice + fish curry + vegetables / 
+millet rice + chicken curry / 
+rice + egg curry + poriyal
+</li>
+<li><b>Evening:</b> Sprouts / buttermilk</li>
+
+<li><b>Dinner Options:</b> 
+Grilled fish + vegetables / 
+light chicken curry + salad / 
+egg bhurji + roti
+</li>
+<li><b>Optional:</b> Coconut water / fresh juice</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why This Plan Works 📊</h2>
+<ul>
+<li>Omega-3 supports brain development</li>
+<li>Balanced meals provide nutrients</li>
+<li>Supports maternal health</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recommended Activities 🧘</h2>
+<ul>
+<li>Light walking</li>
+<li>Prenatal yoga (doctor approved)</li>
+<li>Breathing exercises</li>
+</ul>
+<img src="images/pregnancyexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+<button onclick="location.href='progress.html'" style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px;">
+Check Your Progress
+</button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Pregnancy Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may affect circulation. Include light movement daily." :
+"Maintain moderate activity for a healthy pregnancy.";
+</script>
+
+</body>
+</html>

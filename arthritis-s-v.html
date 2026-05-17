@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arthritis - South Indian Vegetarian Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p id="title"></p>
+</header>
+
+<div class="container">
+
+<h2>About Arthritis</h2>
+<p>
+South Indian vegetarian diets can be made anti-inflammatory by using millets, coconut, and spices like turmeric and curry leaves.
+</p>
+
+<img src="images/arthritis.png">
+
+<div class="section">
+<h2>Foods to Include ✅</h2>
+<ul>
+<li>Millets (ragi, jowar)</li>
+<li>Idli and dosa (fermented foods)</li>
+<li>Coconut-based dishes</li>
+<li>Vegetables</li>
+<li>Curd</li>
+<li>Spices like turmeric</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Foods to Avoid ❌</h2>
+<ul>
+<li>Deep fried snacks (vada, bajji)</li>
+<li>Excess rice</li>
+<li>Processed foods</li>
+<li>Sugary sweets</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Diet Plan 🍽️</h2>
+<ul>
+<li><b>Breakfast:</b> Idli + sambar / ragi dosa / vegetable upma</li>
+<li><b>Mid-Morning:</b> Tender coconut water / fruit</li>
+<li><b>Lunch:</b> Brown rice + sambar + poriyal + curd / millet meals</li>
+<li><b>Snack:</b> Sundal / nuts / herbal tea</li>
+<li><b>Dinner:</b> Vegetable soup / chapati + curry / dosa + chutney</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Exercises 🏃</h2>
+<ul>
+<li>Yoga</li>
+<li>Walking</li>
+<li>Breathing exercises</li>
+<li>Light stretching</li>
+</ul>
+
+<img src="images/arthritisexec.png">
+</div>
+
+<div class="section">
+<h2>Health Warning ⚠️</h2>
+<div id="warningBox" class="warning"></div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:30px;">
+  <button onclick="location.href='progress.html'" 
+  style="padding:15px 30px; background:#0f766e; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">
+  Check Your Progress
+  </button>
+</div>
+
+</div>
+
+<script>
+let region = localStorage.getItem("region");
+let diet = localStorage.getItem("diet");
+let activity = localStorage.getItem("activity");
+
+document.getElementById("title").innerText =
+"Your " + region + " India " + diet + " Arthritis Plan";
+
+document.getElementById("warningBox").innerText =
+(activity === "Low") ?
+"Low activity may increase joint stiffness. Include gentle movement daily." :
+"Maintain regular activity to support joint flexibility and reduce stiffness.";
+</script>
+
+</body>
+</html>

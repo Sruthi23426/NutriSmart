@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weekly Health Assessment</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.question{
+margin:25px 0;
+padding:20px;
+background:#ffffff;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.question:hover{
+transform:translateY(-3px);
+}
+
+.question p{
+font-weight:600;
+margin-bottom:10px;
+}
+
+.day-box{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.day-box span{
+padding:10px 14px;
+border-radius:8px;
+background:#e0f7fa;
+cursor:pointer;
+transition:0.2s;
+}
+
+.day-box span:hover{
+background:#b2ebf2;
+}
+
+.selected{
+background:#0f766e !important;
+color:white;
+}
+
+input[type="radio"], input[type="checkbox"]{
+margin-right:8px;
+}
+
+input[type="range"]{
+width:100%;
+margin-top:10px;
+}
+
+select{
+padding:8px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-top:10px;
+}
+
+button{
+background:#0f766e;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+display:block;
+margin:30px auto;
+}
+
+button:hover{
+background:#0c5f59;
+}
+
+.result-box{
+margin-top:30px;
+padding:25px;
+border-radius:15px;
+background:#e0f7fa;
+display:none;
+text-align:center;
+}
+
+.progress-bar{
+width:100%;
+background:#ddd;
+border-radius:10px;
+overflow:hidden;
+margin-top:15px;
+}
+
+.progress-fill{
+height:20px;
+width:0%;
+background:#0f766e;
+transition:0.5s;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>NutriSmart</h1>
+<p>Weekly Health Progress Assessment</p>
+</header>
+
+<div class="container">
+
+<h2>Weekly Self-Assessment</h2>
+<p>Answer based on your habits over the past 7 days.</p>
+
+<!-- Q1 -->
+<div class="question">
+<p>1. On how many days did you follow your diet plan?</p>
+<div class="day-box" id="dietDays"></div>
+</div>
+
+<!-- Q2 -->
+<div class="question">
+<p>2. Indicate your overall sugar/refined food intake:</p>
+<input type="range" min="0" max="2" value="1" id="sugarSlider">
+<p style="text-align:center;">Low ← → High</p>
+</div>
+
+<!-- Q3 -->
+<div class="question">
+<p>3. Which best describes your eating pattern?</p>
+<label><input type="radio" name="q3" value="2"> Followed diet consistently</label><br>
+<label><input type="radio" name="q3" value="1"> Some deviations</label><br>
+<label><input type="radio" name="q3" value="0"> Frequently unhealthy</label>
+</div>
+
+<!-- Q4 -->
+<div class="question">
+<p>4. Select all that apply this week:</p>
+<label><input type="checkbox" value="1" class="q4"> Ate vegetables daily</label><br>
+<label><input type="checkbox" value="1" class="q4"> Maintained portion control</label><br>
+<label><input type="checkbox" value="1" class="q4"> Drank enough water</label>
+</div>
+
+<!-- Q5 -->
+<div class="question">
+<p>5. Exercise frequency:</p>
+<label><input type="radio" name="q5" value="2"> 5–7 days</label><br>
+<label><input type="radio" name="q5" value="1"> 2–4 days</label><br>
+<label><input type="radio" name="q5" value="0"> 0–1 days</label>
+</div>
+
+<!-- Q6 -->
+<div class="question">
+<p>6. Sleep consistency:</p>
+<label><input type="radio" name="q6" value="2"> Consistent</label><br>
+<label><input type="radio" name="q6" value="0"> Irregular</label>
+</div>
+
+<!-- Q7 -->
+<div class="question">
+<p>7. Late-night eating habits:</p>
+<select id="q7">
+<option value="2">Rarely or never</option>
+<option value="1">Occasionally</option>
+<option value="0">Frequently</option>
+</select>
+</div>
+
+<button onclick="calculateProgress()">Evaluate Progress</button>
+
+<div id="result" class="result-box"></div>
+
+<button onclick="location.href='progress-dashboard.html'">
+View Overall Progress
+</button>
+
+</div>
+
+<script>
+
+let container = document.getElementById("dietDays");
+let selectedDays = 0;
+
+for(let i=1;i<=7;i++){
+  let span = document.createElement("span");
+  span.innerText = "Day " + i;
+  span.onclick = function(){
+    span.classList.toggle("selected");
+    selectedDays = document.querySelectorAll(".selected").length;
+  }
+  container.appendChild(span);
+}
+
+function calculateProgress(){
+
+let total = 0;
+let max = 14;
+
+// Track weak areas
+let issues = {
+  diet: false,
+  sugar: false,
+  exercise: false,
+  sleep: false,
+  habits: false
+};
+
+// Q1 Diet consistency
+total += Math.min(selectedDays,2);
+if(selectedDays <= 3) issues.diet = true;
+
+// Q2 Sugar
+let sugar = document.getElementById("sugarSlider").value;
+total += (2 - sugar);
+if(sugar >= 1) issues.sugar = true;
+
+// Q3 Pattern
+let q3 = document.querySelector('input[name="q3"]:checked');
+if(q3){
+  total += parseInt(q3.value);
+  if(q3.value == "0") issues.diet = true;
+}
+
+// Q4 Healthy habits
+let q4 = document.querySelectorAll(".q4:checked").length;
+total += Math.min(q4,2);
+if(q4 <= 1) issues.habits = true;
+
+// Q5 Exercise
+let q5 = document.querySelector('input[name="q5"]:checked');
+if(q5){
+  total += parseInt(q5.value);
+  if(q5.value == "0") issues.exercise = true;
+}
+
+// Q6 Sleep
+let q6 = document.querySelector('input[name="q6"]:checked');
+if(q6){
+  total += parseInt(q6.value);
+  if(q6.value == "0") issues.sleep = true;
+}
+
+// Q7 Late eating
+let q7 = document.getElementById("q7").value;
+total += parseInt(q7);
+if(q7 == "0") issues.habits = true;
+
+// Final score
+let percent = Math.round((total/max)*100);
+let remaining = 100 - percent;
+
+// Result UI
+let result = `
+<h2>Health Progress Report</h2>
+<h3>Overall Score: ${percent}%</h3>
+
+<div class="progress-bar">
+<div class="progress-fill" style="width:${percent}%"></div>
+</div>
+
+<p><b>Distance from Goal:</b> ${remaining}% improvement required</p>
+`;
+
+// Interpretation
+if(percent >= 80){
+  result += `<p><b>Status:</b> Excellent adherence. You are very close to achieving your health goals.</p>`;
+}
+else if(percent >= 50){
+  result += `<p><b>Status:</b> Moderate adherence. You are progressing, but consistency needs improvement.</p>`;
+}
+else{
+  result += `<p><b>Status:</b> Low adherence. Significant lifestyle improvements are recommended.</p>`;
+}
+
+// Recommendations
+result += `<h3>Personalized Recommendations</h3><ul>`;
+
+if(issues.diet){
+  result += `<li>Improve consistency in following your diet plan and avoid frequent deviations.</li>`;
+}
+if(issues.sugar){
+  result += `<li>Reduce intake of refined sugars and processed foods.</li>`;
+}
+if(issues.exercise){
+  result += `<li>Incorporate regular physical activity (at least 30 minutes daily).</li>`;
+}
+if(issues.sleep){
+  result += `<li>Maintain a consistent sleep schedule of 7–8 hours per night.</li>`;
+}
+if(issues.habits){
+  result += `<li>Focus on overall healthy habits such as hydration and avoiding late-night eating.</li>`;
+}
+
+// If no issues
+if(!issues.diet && !issues.sugar && !issues.exercise && !issues.sleep && !issues.habits){
+  result += `<li>Your current routine is well-balanced. Continue maintaining these habits.</li>`;
+}
+
+result += `</ul>`;
+
+// Final tip section
+result += `
+<div class="highlight">
+<b>Tip:</b> Small, consistent improvements over time lead to sustainable health outcomes.
+</div>
+`;
+
+let resultDiv = document.getElementById("result");
+resultDiv.innerHTML = result;
+resultDiv.style.display = "block";
+
+let email = localStorage.getItem("email");
+
+fetch("http://localhost:3000/saveProgress", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    email: email,
+    score: percent
+  })
+})
+.then(res => res.json())
+.then(data => {
+  console.log("Progress saved:", data);
+})
+.catch(err => console.log(err));
+}
+
+</script>
+
+</body>
+</html>
