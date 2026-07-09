@@ -201,7 +201,7 @@ Charts + Health Tips
 
 **Sruthi Chaganti**<br>
 
-B.Tech Computer Science and Engineering
+B.Tech Computer Science and Engineering<br>
 VIT-AP University
 
 ---
