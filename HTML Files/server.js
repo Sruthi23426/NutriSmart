@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -5,17 +6,16 @@ const cors = require("cors");
 const app = express();
 
 // ====================== CORS ======================
-app.use(cors({
-  origin: "http://127.0.0.1:5500"
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use(express.static(__dirname));
 
 // ====================== MongoDB ======================
-mongoose.connect("mongodb://127.0.0.1:27017/nutrismart")
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log(err));
+  
 
 // ====================== SCHEMA ======================
 const userSchema = new mongoose.Schema({
@@ -222,63 +222,10 @@ app.get("/getProgress/:email", async (req, res) => {
 });
 
 // ====================== SERVER ======================
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-
-
-async function updateProfile(){
-
-  let email = localStorage.getItem("email");
-
-  let data = {
-    email,
-    region: document.getElementById("region").value,
-    illness: document.getElementById("illness").value,
-    diet: document.getElementById("diet").value,
-    activity: document.getElementById("activity").value
-  };
-
-  const response = await fetch("http://localhost:3000/updateProfile", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
-
-  const result = await response.json();
-
-  if(result.success){
-    localStorage.setItem("profileUpdated", true);
-    redirectUser();
-  }
-}
-
-
-function calculateProgress(){
-
-let total = 0;
-let max = 14;
-
-// example scoring logic
-let sugar = document.getElementById("sugarSlider").value;
-total += (2 - sugar);
-
-let exercise = document.querySelector('input[name="q5"]:checked');
-if(exercise) total += parseInt(exercise.value);
-
-let percent = Math.round((total/max)*100);
-
-// save to backend
-fetch("http://localhost:3000/saveProgress", {
-  method: "POST",
-  headers: {"Content-Type":"application/json"},
-  body: JSON.stringify({
-    email: localStorage.getItem("email"),
-    score: percent
-  })
-});
-}
-
 
 
