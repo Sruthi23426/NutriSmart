@@ -1,6 +1,6 @@
-# 🥗 NutriSmart – Personalized Nutrition Web Application
+### 🥗 NutriSmart – Personalized Nutrition Web Application
 
-## 📌 Overview
+#### 📌 Overview
 
 NutriSmart is a full-stack web application that provides users with personalized nutrition recommendations based on their health profile, lifestyle, and dietary preferences. The application helps users understand their Body Mass Index (BMI), receive customized diet plans, and monitor their weekly health progress through assessments and visual analytics.
 
@@ -8,7 +8,7 @@ The project was developed using HTML, CSS, JavaScript, Node.js, Express.js, and 
 
 ---
 
-# ✨ Features
+### ✨ Features
 
 * 👤 User Registration and Login
 * 🔐 Secure Authentication
@@ -22,33 +22,33 @@ The project was developed using HTML, CSS, JavaScript, Node.js, Express.js, and 
 
 ---
 
-# 🛠️ Tech Stack
+### 🛠️ Tech Stack
 
-## Frontend
+#### Frontend
 
 * HTML5
 * CSS3
 * JavaScript
 
-## Backend
+#### Backend
 
 * Node.js
 * Express.js
 
-## Database
+#### Database
 
 * MongoDB
 
-## Other Tools
+#### Other Tools
 
 * Git
 * GitHub
 
 ---
 
-# 🚀 Application Workflow
+### 🚀 Application Workflow
 
-## Step 1 — User Authentication
+#### Step 1 — User Authentication
 
 Users can:
 
@@ -57,9 +57,8 @@ Users can:
 
 The authentication system securely stores user information before allowing access to the application.
 
----
 
-## Step 2 — BMI Calculation
+#### Step 2 — BMI Calculation
 
 After logging in, users enter:
 
@@ -72,9 +71,8 @@ The system calculates:
 * BMI Category
 * Basic Health Suggestions
 
----
 
-## Step 3 — Personalized Diet Planning
+#### Step 3 — Personalized Diet Planning
 
 Users provide additional information such as:
 
@@ -86,9 +84,8 @@ Users provide additional information such as:
 
 Based on these inputs, NutriSmart generates a personalized diet recommendation suitable for the user's profile.
 
----
 
-## Step 4 — Weekly Health Assessment
+#### Step 4 — Weekly Health Assessment
 
 Users complete a short weekly questionnaire about their lifestyle and eating habits.
 
@@ -100,9 +97,8 @@ The assessment evaluates:
 * Sleep Schedule
 * Overall Health Routine
 
----
 
-## Step 5 — Progress Tracking
+#### Step 5 — Progress Tracking
 
 The application stores previous assessment scores and displays:
 
@@ -115,7 +111,7 @@ This allows users to monitor their health journey over time.
 
 ---
 
-# 📊 System Flow
+### 📊 System Flow
 
 ```text
 User
@@ -147,57 +143,48 @@ Charts + Health Tips
 
 ---
 
-# 📸 Application Screenshots
+### 📸 Application Screenshots
 
-## 🏠 Home Page
+#### 🏠 Home Page
 
 ![Home Page](images/Picture1.png)
 
----
 
-## 🔐 User Registration
+#### 🔐 User Registration
 
 ![Registration](images/Picture2.png)
 
----
 
-## 🔑 User Login
+#### 🔑 BMI Calculation and Result
 
 ![Login](images/Picture3.png)
 
----
 
-## 📏 BMI Calculator
+#### 🥗 Personalized Diet Plan Detail Page
 
 ![BMI Calculator](images/Picture4.png)
 
----
-
-## 🥗 Personalized Diet Plan
+####  Personalized Diet Plan
 
 ![Diet Plan](images/Picture5.png)
 
----
-
-## 📝 Health Assessment
+#### 📝 Health Assessment
 
 ![Health Assessment](images/Picture6.png)
 
----
 
-## 📊 Progress Dashboard
+#### 📊 Weekly Progress Report 
 
 ![Progress Dashboard](images/Picture7.png)
 
----
 
-## 📈 Weekly Progress Chart
+#### 📈 Complete Progress Charts and Summaries
 
 ![Weekly Progress Chart](images/Picture8.png)
 
 ---
 
-# 🎯 Future Enhancements
+### 🎯 Future Enhancements
 
 * 🤖 AI-powered nutrition recommendations
 * 🔥 Daily calorie tracking
@@ -210,14 +197,11 @@ Charts + Health Tips
 
 ---
 
-# 👩‍💻 Author
+### 👩‍💻 Author
 
-**Sruthi Chaganti**
-
+Sruthi Chaganti
 B.Tech Computer Science and Engineering
-
 VIT-AP University
 
 ---
 
-⭐ If you found this project useful, consider giving it a star!
