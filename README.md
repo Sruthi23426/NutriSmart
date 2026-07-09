@@ -199,7 +199,7 @@ Charts + Health Tips
 
 ### 👩‍💻 Author
 
-**Sruthi Chaganti**
+**Sruthi Chaganti**<br>
 
 B.Tech Computer Science and Engineering
 VIT-AP University
